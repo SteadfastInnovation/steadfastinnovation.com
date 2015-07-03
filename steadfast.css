@@ -1,0 +1,167 @@
+/********** LOADING **********/
+#loadingDiv {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    text-align: center;
+}
+
+/********** GLOBAL **********/
+body{
+    background: #FAFAFA;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+	word-wrap: break-word;
+}
+
+/********** HEADER / NAV MENU **********/
+#push {
+     height: 168px;
+}
+#header {
+    box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+    background-color: #0d657b;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+#navbar {
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+}
+
+#navbar a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#logo {
+    padding-top: 16px;
+    height: 100px;
+}
+
+#logo_container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+paper-tab a{
+    text-align: center;
+    font-size: 11x;
+}
+
+paper-tabs{
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+paper-tabs::shadow #selectionBar {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+paper-tabs paper-tab::shadow #ink {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/********** CONTENT **********/
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    width: 67%;
+    padding: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: #FFFFFF;
+    color: rgba(0, 0, 0, 0.54);
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+
+}
+
+.card a{
+    color: inherit;
+}
+
+.name{
+    font-weight: bold;
+}
+
+/********** BLOG **********/
+.tumblr_posts{
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tumblr_title{
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #0d657b;
+}
+
+.tumblr_post a{
+    color: inherit;
+}
+
+.tumblr_post a.visited{
+    color: #3a3a3a;
+}
+
+/********** PRODUCTS **********/
+#papyrus-logo{
+    width: 100%;
+}
+
+/********** FOOTER **********/
+#footer{
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+    font-size: .8em;
+    text-align: center;
+    width: 80%;
+}
+
+/********** MOBILE **********/
+@media only screen and (max-device-width: 480px) {
+    paper-tab {
+        font-size: 11px;
+    }
+    paper-tabs {
+        width: 90%;
+    }
+
+    .card {
+        width: auto;
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    #logo {
+        height: 75px;
+    }
+
+    #push {
+        height: 143px;
+    }
+}

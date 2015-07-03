@@ -1,0 +1,18 @@
+<div id="blog">
+    <script>
+    $('#blog').append("<ol class='tumblr_posts'></ol>");
+    // read in all of the blog posts from tumblr's api
+    var amtPosts = blog_api_read.posts.length - 1;
+    for (var i = 0; i < amtPosts; i++) {
+        post_title = blog_api_read.posts[i]["regular-title"];
+        post_body = blog_api_read.posts[i]["regular-body"];
+        // build blog html elements
+        if (post_title !== undefined && post_body !== undefined){
+            $('.tumblr_posts').append("<li class='card'>" +
+            "<div class='tumblr_title'>" + post_title + "</div>" +
+            "<div class='tumblr_body'>" + post_body + "</div>" +
+            "</li>");
+        }
+    }
+    </script>
+</div>
