@@ -10,25 +10,53 @@ var loadPage = function(page, selected) {
     $('#content').load(page, function(){
         // make sure that the selector bar is in the correct position
         document.getElementsByTagName("paper-tabs")[0].setAttribute("selected", selected);
+        if (selected === "-1") {
+            document.getElementsByTagName("paper-tabs")[0].setAttribute("noBar", "true");
+            window.location.href = "#home";
+        } else {
+            document.getElementsByTagName("paper-tabs")[0].setAttribute("noBar", "false");
+        }
     });
 }
 
-$(document).ready(function(){
+function updatePage() {
     var currentHash = window.location.hash.replace("#", "");
 
     // determine the current state of the website (per URL hash)
-    if (currentHash === "") {
-        loadPage('blog.html', "0");
-    } else {
-        var selected = "0";
-        if (currentHash === "products") {selected = "1"};
-        if (currentHash === "press") {selected = "2"};
-        if (currentHash === "devblog") {selected = "3"};
-        if (currentHash === "contact") {selected = "4"};
-        loadPage(currentHash + '.html', selected);
+    var selected = "-1";
+    var stickFooter = true;
+    if (currentHash === "home" || currentHash === "") {
+        if (currentHash === "") {
+            currentHash = "home";
+        }
+        selected = "-1";
     }
-
+    if (currentHash === "products") {
+        selected = "0";
+    };
+    if (currentHash === "press") {
+        selected = "1";
+    };
+    if (currentHash === "devblog") {
+        selected = "2";
+        stickFooter = false;
+    };
+    if (currentHash === "about") {
+        selected = "3";
+    };
+    loadPage(currentHash + '.html', selected);
+    if (stickFooter) {
+        $('#footer').css('position', 'fixed');
+        $('#footer').css('bottom', '0px');
+    } else {
+        $('#footer').css('position', 'static');
+        $('#footer').css('bottom', 'auto');
+    }
     $('#loadingDiv').hide();
-    window.scrollTo(0,1);
-    });
+}
+
+$(document).ready(updatePage());
+$(window).on('hashchange', function(){
+    updatePage();
+});
 </script>
