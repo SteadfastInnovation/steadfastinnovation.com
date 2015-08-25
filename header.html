@@ -1,7 +1,6 @@
 <title> Steadfast Innovation, LLC </title>
 <link rel="stylesheet" type="text/css" href="steadfast.css">
-<link rel="icon" type="image/png" href="img/sfi.png">
-<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
 <link rel="import" href="https://www.polymer-project.org/1.0/components/paper-ripple/paper-ripple.html">
 <link rel="import" href="https://www.polymer-project.org/1.0/components/paper-tabs/paper-tabs.html">
 <link rel="import" href="https://www.polymer-project.org/1.0/components/paper-spinner/paper-spinner.html">
@@ -10,12 +9,6 @@ var loadPage = function(page, selected) {
     $('#content').load(page, function(){
         // make sure that the selector bar is in the correct position
         document.getElementsByTagName("paper-tabs")[0].setAttribute("selected", selected);
-        if (selected === "-1") {
-            document.getElementsByTagName("paper-tabs")[0].setAttribute("noBar", "true");
-            window.location.href = "#home";
-        } else {
-            document.getElementsByTagName("paper-tabs")[0].setAttribute("noBar", "false");
-        }
     });
 }
 
@@ -23,28 +16,25 @@ function updatePage() {
     var currentHash = window.location.hash.replace("#", "");
 
     // determine the current state of the website (per URL hash)
-    var selected = "-1";
+    var selected = "0";
     var stickFooter = true;
-    if (currentHash === "home" || currentHash === "") {
+    if (currentHash === "blog" || currentHash === "") {
         if (currentHash === "") {
-            currentHash = "home";
+            currentHash = "blog";
         }
-        selected = "-1";
+        selected = "0";
+        stickFooter = false
     }
     if (currentHash === "products") {
-        selected = "0";
-    };
-    if (currentHash === "press") {
         selected = "1";
     };
-    if (currentHash === "devblog") {
-        selected = "2";
-        stickFooter = false;
-    };
     if (currentHash === "about") {
-        selected = "3";
+        selected = "2";
     };
     loadPage(currentHash + '.html', selected);
+    if (screen.width < 480) {
+        stickFooter = false;
+    }
     if (stickFooter) {
         $('#footer').css('position', 'fixed');
         $('#footer').css('bottom', '0px');

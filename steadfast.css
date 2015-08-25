@@ -10,6 +10,7 @@
 body{
     background: #FAFAFA;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     margin: 0px;
     padding: 0px;
 }
@@ -71,7 +72,8 @@ td {
 
 paper-tab a{
     text-align: center;
-    font-size: 11x;
+    font-weight: 300 !important;
+    font-size: 14px;
 }
 
 paper-tabs{
@@ -105,6 +107,7 @@ paper-tabs paper-tab::shadow #ink {
     color: rgba(0, 0, 0, 0.54);
     border-radius: 2px;
     box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+    overflow: auto;
 
 }
 .transparent{
@@ -118,10 +121,6 @@ paper-tabs paper-tab::shadow #ink {
 
 .card a{
     color: inherit;
-}
-
-.name{
-    font-weight: bold;
 }
 
 /********** LANDING **********/
@@ -144,7 +143,7 @@ paper-tabs paper-tab::shadow #ink {
 
 .tumblr_title{
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: 500;
     text-decoration: none;
     color: #0d657b;
 }
@@ -166,13 +165,36 @@ paper-tabs paper-tab::shadow #ink {
     width: 100%;
     text-align: center;
 }
+
+/********** ABOUT **********/
+.avatar {
+    float: left;
+    margin: 8px;
+    width: 80px;
+    border-radius: 40px;
+    box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+}
+
+.name{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.job-title {
+    font-size: 16px;
+}
+
+.contact {
+    padding-top: 24px;
+    padding-left: 104px;
+}
+
 /********** FOOTER **********/
 #footer{
     margin-top: 12px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 12px;
-    padding-left: 12px;
     font-size: .8em;
     text-align: center;
     width: 100%;
